@@ -32,8 +32,6 @@ html, body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  overscroll-behavior-y: none;
-  overscroll-behavior-x: none;
 }
 
 input, button, textarea {
@@ -75,12 +73,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
-
 @font-face {
-    font-family: "Klavika Condensed";
-    src: url("../fonts/KlavikaCondensed-Regular.otf") format("opentype");
+  font-family: "Klavika Condensed";
+  src: url("//db.onlinewebfonts.com/t/5a0d9223ba883aeb0aa77cdf39cab746.eot");
+  src: url("//db.onlinewebfonts.com/t/5a0d9223ba883aeb0aa77cdf39cab746.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5a0d9223ba883aeb0aa77cdf39cab746.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5a0d9223ba883aeb0aa77cdf39cab746.woff") format("woff"), url("//db.onlinewebfonts.com/t/5a0d9223ba883aeb0aa77cdf39cab746.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5a0d9223ba883aeb0aa77cdf39cab746.svg#Klavika Condensed") format("svg");
 }
-
 @font-face {
   font-family: "klavika";
   src: url("../fonts/Klavika-Bold.woff2") format("woff2"), url("../fonts/klavika-bold.woff") format("woff"), url("../fonts/Klavika-Bold.eot") format("eot"), url("../fonts/Klavika-Bold.otf") format("otf");
@@ -272,12 +269,10 @@ body.select-b {
   font-size: 60px;
   text-transform: uppercase;
   font-weight: 800;
-  margin-top: 5px;
-  margin-left: 32px;
 }
 .header .header-info h3 {
   font-family: "Klavika Condensed";
-  font-size: 38px;
+  font-size: 36px;
   max-width: 660px;
   width: 100%;
   position: relative;
@@ -289,8 +284,7 @@ body.select-b {
   background-color: #fff;
   display: block;
   position: absolute;
-  bottom: 0px;
-  top: 42px;
+  bottom: 4px;
 }
 
 .header-logo {
@@ -546,8 +540,6 @@ body.select-b {
   display: flex;
   height: 100%;
   width: 100%;
-  margin-top: 0px;
-  margin-left: -22px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -606,12 +598,12 @@ body.select-b {
   font-weight: 500;
   text-transform: uppercase;
   left: 20px;
-  top: -18.5px;
+  top: -12px;
 }
 .body-section .body-section-content .forms-block .content-form-body .form-block .form-body-checked fieldset .corect-answer {
   position: absolute;
   right: -200px;
-  top: 46%;
+  top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -639,24 +631,17 @@ body.select-b {
   font-size: 22px;
   font-weight: 800;
   line-height: 30px;
-  max-width: 1100px;
-  margin-left: 179px;
+  max-width: 954px;
   opacity: 0;
   font-family: "Klavika";
-	color: #3C4242;
 }
-
-.body-section .body-section-content .forms-block .content-form-body .form-block .form-body-checked fieldset .radio-false {
-  padding-left: -100px;
-}
-
 .body-section .body-section-content .forms-block .body-section-content-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 10px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -686,7 +671,7 @@ body.select-b {
   top: 0px;
 }
 .body-section .body-section-content #modal {
-  background-color: rgba(0, 0, 0, 0.88);
+  background-color: rgba(0, 0, 0, 0.7215686275);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -888,9 +873,6 @@ body.select-b {
 }
 .body-section .body-section-content #modal.t6 .tab-modal-body > div:nth-child(6) {
   display: block !important;
-}
-.body-section .body-section-content #modal.sb2-active {
-  width: calc(100% + 400px);
 }
 .body-section .body-section-content #modal.sb2-active .modal-block .sb2 {
   display: block;
@@ -1098,7 +1080,7 @@ body.select-b {
   font-size: 32px;
   line-height: 37px;
   font-weight: 500;
-  padding: 0px 215px 50px 50px;
+  padding: 6% 12%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1115,7 +1097,6 @@ body.select-b {
 }
 .form-modal-help > div .help-modal-div ul {
   padding-left: 30px;
-  padding-top:55px;
   text-align: left;
 }
 .form-modal-help > div .help-modal-div ul li::before {
@@ -1123,7 +1104,6 @@ body.select-b {
   display: inline-block;
   width: 20px;
   margin-left: -20px;
-  color: white;
 }
 
 .form1 .step-1 .form-body-checked {
@@ -1184,14 +1164,14 @@ body.select-b {
 
 .rangef1s2 {
   position: relative;
-  margin-left: -11px;
+  margin-left: -50px;
   padding: 26px 0 20px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 239px;
-  margin-top: 185px;
+  margin-top: 147px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -1202,7 +1182,7 @@ body.select-b {
 }
 .step-one .rangef1s2 {
   height: auto;
-  margin-top: 36px;
+  margin-top: 0;
 }
 .step-one .rangef1s2 #Group_2504 {
   display: block;
@@ -2540,7 +2520,7 @@ a.disable {
 }
 
 .step-1 .form-body-checked {
-  padding-top: 0px;
+  padding-top: 30px;
 }
 
 .info_f2q1 .fds {

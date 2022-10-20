@@ -404,12 +404,12 @@ window.addEventListener('load', function(){
     });
 
     heightElementScroll.addEventListener('scroll', function(){
-        if(heightElementScroll.scrollTop >= ((heightElementToScroll.offsetHeight - heightElementScroll.offsetHeight) - 20)){
+        if(heightElementScroll.scrollTop >= (heightElementToScroll.offsetHeight - heightElementScroll.offsetHeight)){
             document.querySelector('.btn-next').classList.remove('disable');
             document.querySelector('.btn-compleat').classList.remove('disable');
         } else {
-            //document.querySelector('.btn-next').classList.add('disable');
-            //document.querySelector('.btn-compleat').classList.add('disable');
+            document.querySelector('.btn-next').classList.add('disable');
+            document.querySelector('.btn-compleat').classList.add('disable');
         }
     });
 
