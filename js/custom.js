@@ -11,6 +11,7 @@ window.addEventListener('load', function(){
     document.querySelectorAll('.sidebar-button').forEach((i, n) => {
         i.addEventListener('click', function(){
             modalSection.setAttribute("class", "");
+            body.classList.remove('add', 'add1', 'add2', 'add3', 'add4');
             let j = n + 1;
             modalSection.classList.add('modal-active', 'sb'+ j +'-active');
             if (n == 0) {
@@ -260,10 +261,16 @@ window.addEventListener('load', function(){
             body.setAttribute("class", "");
             body.classList.add('select-b', 'form2', 'step1', 'finish');
             document.querySelector('.btn-f2-start').classList.remove('btn-f2-start');
+            document.querySelector('.header-info h3').innerHTML= "RA Safety Data";
+        document.querySelector('.step-info-text-coun').innerHTML= "Safety Questions Remaining";
+        document.querySelector('.step-info-number-coun').innerHTML= "3";
         } else {
             body.setAttribute("class", "");
             body.classList.add('select-b', 'form1', 'step1', 'finish');
             document.querySelector('.btn-f1-start').classList.remove('btn-f1-start');
+            document.querySelector('.header-info h3').innerHTML= "RA Efficacy Data";
+        document.querySelector('.step-info-text-coun').innerHTML= "Efficacy Questions Remaining";
+        document.querySelector('.step-info-number-coun').innerHTML= "3";
         }
     });
 
@@ -372,7 +379,17 @@ window.addEventListener('load', function(){
                     document.querySelector('.range-countsv32 .range-count-you span').innerHTML = n.valueAsNumber.toFixed(2);
                 }
 
-    
+                if(n.valueAsNumber === 2){
+                    n.classList.add('input-max');
+                }else {
+                    n.classList.remove('input-max');
+                }
+
+                if(n.valueAsNumber === 0){
+                    n.classList.add('input-min');
+                }else {
+                    n.classList.remove('input-min');
+                }
             };
             n.oninput();
     
@@ -404,12 +421,12 @@ window.addEventListener('load', function(){
     });
 
     heightElementScroll.addEventListener('scroll', function(){
-        if(heightElementScroll.scrollTop >= ((heightElementToScroll.offsetHeight - heightElementScroll.offsetHeight) - 20)){
+        if(heightElementScroll.scrollTop >= (heightElementToScroll.offsetHeight - heightElementScroll.offsetHeight)){
             document.querySelector('.btn-next').classList.remove('disable');
             document.querySelector('.btn-compleat').classList.remove('disable');
         } else {
-            //document.querySelector('.btn-next').classList.add('disable');
-            //document.querySelector('.btn-compleat').classList.add('disable');
+            document.querySelector('.btn-next').classList.add('disable');
+            document.querySelector('.btn-compleat').classList.add('disable');
         }
     });
 
@@ -478,20 +495,22 @@ window.addEventListener('load', function(){
         document.addEventListener('scroll', resetTimer, true); // improved; see comments
         
         function logout() {
-            body.classList.remove('add', 'add1', 'add2', 'add3', 'add4');
-            modalSection.setAttribute("class", "");
-            modalSection.classList.add('modal-active', 'form-deactive');
-            var seconds = 30;
-            var el = document.querySelector('.inactive-modal .count');
+            if(body.classList.contains('select-b')){
+                body.classList.remove('add', 'add1', 'add2', 'add3', 'add4');
+                modalSection.setAttribute("class", "");
+                modalSection.classList.add('modal-active', 'form-deactive');
+                var seconds = 30;
+                var el = document.querySelector('.inactive-modal .count');
 
-            function incrementSeconds() {
-                seconds -= 1;
-                el.innerText =  seconds;
+                function incrementSeconds() {
+                    seconds -= 1;
+                    el.innerText =  seconds;
+                }
+                clearTimeout(cancel);
+                cancel = setInterval(incrementSeconds, 1000);
+                clearTimeout(time2);
+                time2 = setTimeout(exitGlobal, 30000);
             }
-            clearTimeout(cancel);
-            cancel = setInterval(incrementSeconds, 1000);
-            clearTimeout(time2);
-            time2 = setTimeout(exitGlobal, 30000);
         }
 
         function resetTimer() {
@@ -579,21 +598,9 @@ window.addEventListener('load', function(){
 
     document.querySelectorAll('.nav-dots > div').forEach((i, n) => {
         i.addEventListener('click', function(){
-            if(body.classList.contains('step1')){
-                if(n == 0) {
-                    body.classList.add('add1', 'add');
-                    modalSection.classList.add('modal-active');
-                    modalSection.classList.add('madd');
-                }
-            }
             if(body.classList.contains('step2')){
                 if(n == 0) {
                     body.classList.add('add1', 'add');
-                    modalSection.classList.add('modal-active');
-                    modalSection.classList.add('madd');
-                }
-                if(n == 1) {
-                    body.classList.add('add2', 'add');
                     modalSection.classList.add('modal-active');
                     modalSection.classList.add('madd');
                 }
@@ -606,11 +613,6 @@ window.addEventListener('load', function(){
                 }
                 if(n == 1) {
                     body.classList.add('add2', 'add');
-                    modalSection.classList.add('modal-active');
-                    modalSection.classList.add('madd');
-                }
-                if(n == 2) {
-                    body.classList.add('add3', 'add');
                     modalSection.classList.add('modal-active');
                     modalSection.classList.add('madd');
                 }
@@ -628,11 +630,6 @@ window.addEventListener('load', function(){
                 }
                 if(n == 2) {
                     body.classList.add('add3', 'add');
-                    modalSection.classList.add('modal-active');
-                    modalSection.classList.add('madd');
-                }
-                if(n == 3) {
-                    body.classList.add('add4', 'add');
                     modalSection.classList.add('modal-active');
                     modalSection.classList.add('madd');
                 }
@@ -693,6 +690,6 @@ window.addEventListener('load', function(){
     //     });
     // }
 
-    inactivityTime();
+    inactivityTime1();
     
 });
